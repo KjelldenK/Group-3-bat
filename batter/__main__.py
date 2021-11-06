@@ -35,7 +35,7 @@ def main(screen):
             brick.set_position(position)
             cast["brick"].append(brick)
 
-    x = int(constants.MAX_X / 2)
+    x = int(random.randint(30,50))
     y = int(constants.MAX_Y / 2)
     position = Point(x, y)
     velocity = Point(1, -1)
