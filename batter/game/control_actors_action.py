@@ -7,7 +7,7 @@ class ControlActorsAction:
         self._input_service = input
 
     def execute(self, cast):
-
+        # Executes input information for the game
         direction = self._input_service.get_direction()
         paddle = cast["paddle"][0]
         paddle.set_velocity(direction)

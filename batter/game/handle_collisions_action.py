@@ -1,17 +1,21 @@
 from game.action import Action
 from game.point import Point
 from game import constants
+from game.score import Score
 class HandleCollisionsAction(Action):
     
 
 
     def execute(self, cast):
-
-        """         paddle = cast["paddle"][0]
+        # executes the action to see if any object are hit eachother and changing there status due to collisions.
+       
         ball = cast["ball"][0]
-        brick = cast["brick"] """
-        
-        """         if paddle.get_position().is_boarder(len(paddle.get_text())):
+        paddle = cast["paddle"][0] 
+        bricks = cast["brick"]
+        score = cast["score"][0]
+
+        # makes sure the paddle cant go off the screen
+        if paddle.get_position().is_boarder(len(paddle.get_text())):
             position = paddle.get_position()
             velocity = paddle.get_velocity()
             x1 = position.get_x()
@@ -23,22 +27,11 @@ class HandleCollisionsAction(Action):
             position = Point(x,y)
             paddle.set_position(position)
 
-        ball_hitbox = ball.get_hitbox()
-        for bricks in brick:
-
-            if  bricks.get_position().equals(ball_hitbox["upper"][0]):
-                position = ball.get_position()
-                velocity = ball.get_velocity()
-                x = velocity.get_x() 
-                y = velocity.get_y() * -1
-                ball.set_velocity(Point(x,y))
-             """
-            
-        ball = cast["ball"][0]
-        paddle = cast["paddle"][0] 
-        bricks = cast["brick"]
+        # check in the ball is hitting a wall of a brick and if its a brick its removed and a score is added
         for brick in bricks:
             if ball.get_position().equals(brick.get_position()):
+                points = brick.get_points()
+                score.add_score(points)
                 bricks.remove(brick)
                 ball.set_velocity(Point.reverse_y(ball.get_velocity()))
 

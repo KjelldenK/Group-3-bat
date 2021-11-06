@@ -10,6 +10,7 @@ from game.move_actors_action import MoveActorsAction
 from game.input_service import InputService
 from game.output_service import OutputService
 from asciimatics.screen import Screen 
+from game.score import Score
 
 def main(screen):
 
@@ -29,6 +30,7 @@ def main(screen):
         for y in range(2, 6):
             position = Point(x, y)
             brick = Actor()
+            brick.set_points(5)
             brick.set_text("*")
             brick.set_position(position)
             cast["brick"].append(brick)
@@ -42,6 +44,9 @@ def main(screen):
     ball.set_position(position)
     ball.set_velocity(velocity)
     cast["ball"] = [ball]
+
+    score = Score()
+    cast["score"] = [score]
     
     # create the script {key: tag, value: list}
     script = {}

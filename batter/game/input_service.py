@@ -11,7 +11,7 @@ class InputService:
         self._keys[100] = Point(1, 0) # d
 
     def get_direction(self):
-
+        # gets the direction that the player wants the paddle to move
         direction = Point(0,0)
         event = self._screen.get_event()
         if isinstance(event, KeyboardEvent):

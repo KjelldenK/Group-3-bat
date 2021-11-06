@@ -10,6 +10,7 @@ class Director:
 
 
     def start_game(self):
+        # game loop
         while True:
             self._cue_action("input")
             self._cue_action("update")
@@ -17,6 +18,6 @@ class Director:
             sleep(constants.FRAME_LENGTH)
 
     def _cue_action(self, tag):
-
+        # perfroms the actions of the game.
         for action in self._script[tag]:
             action.execute(self._cast)

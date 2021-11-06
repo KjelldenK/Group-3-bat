@@ -1,4 +1,4 @@
-
+from game.actor import Actor
 from game import constants
 
 class Point:
@@ -65,11 +65,13 @@ class Point:
 
 
     def reverse_y(self):
+        # reverse the y value 
         x = self._x
         y = self._y * -1
         return Point(x,y)
         
     def reverse_x(self):
+        # reverse the x value
         x = self._x * -1
         y = self._y
         return Point(x,y)

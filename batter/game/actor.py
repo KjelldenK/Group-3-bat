@@ -6,7 +6,7 @@ class Actor:
         self._text = ""
         self._position = Point(0,0)
         self._velocity = Point(0,0)
-        
+        self._points = int
 
     def set_position(self, position):
         """sets the acotrs position in 2d space
@@ -25,18 +25,20 @@ class Actor:
         self._velocity = velocity
 
     def get_position(self):
+        # get the position of the actor
 
         return self._position
 
     def get_velocity(self):
+        # get the velocity of the actor
         return self._velocity
 
     def get_text(self):
-
+        # get the text of the actor
         return self._text
 
 
-    def get_hitbox(self):
+        """     def get_hitbox(self):
         hit_box = {}
 
         position = self.get_position()
@@ -61,8 +63,14 @@ class Actor:
         y = position.get_y() 
         hit_box["bottom"] = [Point(x,y)]
 
-        return hit_box
+        return hit_box """
 
-
+    def set_points(self, points):
+        # sets the points for an object
+        self._points = points
+    
+    def get_points(self):
+        # get the points that an object is worth
+        return self._points
 
 

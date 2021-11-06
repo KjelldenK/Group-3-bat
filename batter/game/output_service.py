@@ -28,6 +28,7 @@ class OutputService:
         self._screen.print_at("-" * constants.MAX_X, 0, constants.MAX_Y, 7)
         
     def draw_actor(self, actor):
+        # displays the actors on the screen so the player can see whats going on
         """Renders the given actor's text on the screen.
 
         Args:
@@ -49,5 +50,6 @@ class OutputService:
             self.draw_actor(actor)
     
     def flush_buffer(self):
+        # clears the screen
         """Renders the screen.""" 
         self._screen.refresh()    
