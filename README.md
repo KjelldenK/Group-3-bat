@@ -56,3 +56,4 @@ root                    (project root folder)
 - # TODO: Add your names and emails here
 
 - Kevin Guzman - guz21003@byui.edu
+- kjellden knutzen kjelldenknutzen@gmail.com
